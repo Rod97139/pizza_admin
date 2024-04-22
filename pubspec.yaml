@@ -43,6 +43,10 @@ dependencies:
   equatable: ^2.0.5
 
   firebase_core: ^2.9.0
+  user_repository:
+    path: packages/user_repository
+  pizza_repository:
+    path: packages/pizza_repository
 
 dev_dependencies:
   flutter_test:
