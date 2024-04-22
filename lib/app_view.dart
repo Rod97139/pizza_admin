@@ -10,6 +10,7 @@ class MyAppView extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp.router(
       title: "Pizza admin" ,
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         colorScheme: ColorScheme.light(
           background: Colors.grey.shade100,
