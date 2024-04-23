@@ -9,20 +9,7 @@ class CreatePizzaScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Theme.of(context).colorScheme.background,
-      body: Column(
-        children: [
-          Expanded(
-            child: Container(
-                
-            ),
-          ),
-          Expanded(
-            child: Container(
-            
-            ),
-          )
-        ] 
-        ),
+      
     );
   }
 }
