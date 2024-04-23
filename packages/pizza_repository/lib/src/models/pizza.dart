@@ -64,4 +64,19 @@ class Pizza {
       macros: entity.macros,
     );
   }
+
+  @override
+  String toString() {
+    return '''
+      Pizza { 
+        pizzaId: $pizzaId, 
+        picture: $picture, 
+        isVeg: $isVeg, 
+        spicy: $spicy, name: $name, 
+        description: $description, 
+        price: $price, 
+        discount: $discount,
+        macros: $macros 
+      }''';
+  }
 }
