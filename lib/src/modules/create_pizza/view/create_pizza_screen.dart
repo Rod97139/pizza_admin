@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:pizza_admin/src/components/my_text_field.dart';
 import 'package:pizza_admin/src/modules/create_pizza/components/macro.dart';
 import 'package:pizza_repository/pizza_repository.dart';
@@ -56,7 +57,17 @@ class _CreatePizzaScreenState extends State<CreatePizzaScreen> {
                 const SizedBox(height: 20),
                 InkWell(
                   borderRadius: BorderRadius.circular(20),
-                  onTap: () {},
+                  onTap: () async {
+                    final ImagePicker picker = ImagePicker();
+                    final XFile? image = await picker.pickImage(
+                      source: ImageSource.gallery,
+                      maxHeight: 1000,
+                      maxWidth: 1000,
+                    );
+                    if (image != null && context.mounted) {
+                      
+                    }
+                  },
                   child: Ink(
                     width: 400,
                     height: 400,
