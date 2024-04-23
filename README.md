@@ -1,16 +1,23 @@
 # pizza_admin
 
-A new Flutter project.
+ 
 
-## Getting Started
+Exemple de fichier JSON contenant la configuration CORS:
 
-This project is a starting point for a Flutter application.
+```json
+[
+    {
+      "origin": ["https://your-example-website.appspot.com"],
+      "method": ["GET", "HEAD", "POST", "PUT", "DELETE"],
+      "responseHeader": ["Content-Type"],
+      "maxAgeSeconds": 3600
+    }
+]
+```
 
-A few resources to get you started if this is your first Flutter project:
+commande bash pour le storage firebase à executer dans le terminal google cloud du projet :
+cors setup for Image upload :
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+```bash
+gsutil cors set cors.json gs://<your-url>.appspot.com
+```
