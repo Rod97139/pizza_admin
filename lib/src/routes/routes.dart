@@ -5,6 +5,7 @@ import 'package:pizza_admin/src/blocs/authentication_bloc/authentication_bloc.da
 import 'package:pizza_admin/src/modules/auth/blocs/sign_in_bloc/sign_in_bloc.dart';
 import 'package:pizza_admin/src/modules/auth/views/login_screen.dart';
 import 'package:pizza_admin/src/modules/base/views/base_screen.dart';
+import 'package:pizza_admin/src/modules/create_pizza/blocs/create_pizza_bloc/create_pizza_bloc.dart';
 import 'package:pizza_admin/src/modules/create_pizza/blocs/upload_picture_bloc/upload_picture_bloc.dart';
 import 'package:pizza_admin/src/modules/create_pizza/view/create_pizza_screen.dart';
 import 'package:pizza_admin/src/modules/home/views/home_screen.dart';
@@ -61,10 +62,15 @@ GoRouter router(AuthenticationBloc authBloc) {
             ),
             GoRoute(
               path: '/create',
-              builder: (context, state) => BlocProvider(
-                create: (context) => UploadPictureBloc(
-                  FirebasePizzaRepo()
-                ),
+              builder: (context, state) => MultiBlocProvider(
+                providers: [
+                  BlocProvider(
+                    create: (context) => UploadPictureBloc(FirebasePizzaRepo()),
+                  ),
+                  BlocProvider(
+                    create: (context) => CreatePizzaBloc(FirebasePizzaRepo()),
+                  ),
+                ],
                 child: const CreatePizzaScreen(),
               ),
             )
