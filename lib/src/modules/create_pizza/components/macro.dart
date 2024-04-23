@@ -5,11 +5,13 @@ class MyMacroWidget extends StatelessWidget {
   final String title;
   final int value;
   final IconData icon;
+  final TextEditingController controller;
 
   const MyMacroWidget({
     required this.title,
     required this.value,
     required this.icon,
+    required this.controller,
     super.key
   });
 
@@ -38,6 +40,7 @@ class MyMacroWidget extends StatelessWidget {
               ),
               const SizedBox(height: 4),
               TextFormField(
+                controller: controller,
                 textAlign: TextAlign.center,
                 style: const TextStyle(
                   fontSize: 12,

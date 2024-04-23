@@ -1,5 +1,6 @@
 import 'package:pizza_repository/src/entities/entities.dart';
 import 'package:pizza_repository/src/models/models.dart';
+import 'package:uuid/uuid.dart';
 
 class Pizza {
   String pizzaId;
@@ -23,6 +24,18 @@ class Pizza {
     required this.discount,
     required this.macros,
   });
+
+  static final empty = Pizza(
+    pizzaId: const Uuid().v1(),
+    picture: '',
+    isVeg: false,
+    spicy: 1,
+    name: '',
+    description: '',
+    price: 0,
+    discount: 0,
+    macros: Macros.empty,
+  );
 
   PizzaEntity toEntity() {
     return PizzaEntity(
